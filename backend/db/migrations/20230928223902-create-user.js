@@ -2,7 +2,7 @@
 
 let options = {};
 if (process.env.NODE_ENV === 'production') {
-  options.schema = process.env.SCHEMA; 
+  options.schema = process.env.SCHEMA;
 }
 
 module.exports = {
@@ -23,6 +23,14 @@ module.exports = {
         type: Sequelize.STRING(256),
         allowNull: false,
         unique: true
+      },
+      firstName: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      lastName: {
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       hashedPassword: {
         type: Sequelize.STRING.BINARY,

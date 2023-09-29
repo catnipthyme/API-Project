@@ -23,7 +23,6 @@ module.exports = (sequelize, DataTypes) => {
             throw new Error("Cannot be an email.")
           }
         }
-
       }
     },
     email: {
@@ -34,7 +33,20 @@ module.exports = (sequelize, DataTypes) => {
         len: [3, 256],
         isEmail: true
       }
-
+    },
+    firstName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isAlpha: true
+      }
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isAlpha: true
+      }
     },
     hashedPassword: {
       type: DataTypes.STRING.BINARY,
