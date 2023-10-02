@@ -9,8 +9,8 @@ router.use('/session', sessionRouter);
 
 router.use('/users', usersRouter);
 
-router.post('/test', (reqq, res) => {
-  res.json({ requestBody: reqq.body });
+router.post('/test', (req, res) => {
+  res.json({ requestBody: req.body });
 });
 
 module.exports = router;
